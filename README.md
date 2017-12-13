@@ -1,2 +1,2 @@
 # Hangfire.Cluster
-fork for https://github.com/icsharp/Hangfire.Topshelf
+fork from https://github.com/icsharp/Hangfire.Topshelf
