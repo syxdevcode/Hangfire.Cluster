@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="logs\**" />
+    <EmbeddedResource Remove="logs\**" />
+    <None Remove="logs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="CommandLineParser" Version="2.1.1-beta" />
+    <PackageReference Include="HangFire.Core" Version="1.6.17" />
+    <PackageReference Include="HangFire.Redis.StackExchange" Version="1.7.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="NETStandard.Library" Version="2.0.0" />
+    <PackageReference Include="Serilog" Version="2.6.0" />
+    <PackageReference Include="Serilog.Sinks.Literate" Version="3.0.1-dev-00044" />
+    <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.1-dev-00771" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\HangFire.Autofac\HangFire.Autofac.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Hangfire.Samples.Framework\Hangfire.Samples.Framework.csproj" />
+    <ProjectReference Include="..\HF.Samples.OrderService\HF.Samples.OrderService.csproj" />
+    <ProjectReference Include="..\HF.Samples.StorageService\HF.Samples.StorageService.csproj" />
+  </ItemGroup>
+
+</Project>

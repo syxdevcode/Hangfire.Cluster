@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Hangfire.Console" Version="1.3.10" />
+    <PackageReference Include="NETStandard.Library" Version="2.0.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.6.17" />
+    <PackageReference Include="HangFire.Core" Version="1.6.17" />
+    <PackageReference Include="HangFire.Redis.StackExchange" Version="1.7.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\HangFire.Autofac\HangFire.Autofac.csproj" />
+    <ProjectReference Include="..\HF.Samples.Consumer\HF.Samples.Consumer.csproj" />
+    <ProjectReference Include="..\HF.Samples.GoodsService\HF.Samples.GoodsService.csproj" />
+    <ProjectReference Include="..\HF.Samples.OrderService\HF.Samples.OrderService.csproj" />
+    <ProjectReference Include="..\HF.Samples.StorageService\HF.Samples.StorageService.csproj" />
+  </ItemGroup>
+
+</Project>
