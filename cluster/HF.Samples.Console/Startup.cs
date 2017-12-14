@@ -15,7 +15,6 @@ using HF.Samples.GoodsService;
 using HF.Samples.OrderService;
 using HF.Samples.StorageService;
 using Hangfire.Dashboard;
-using Hangfire.Console;
 
 namespace HF.Samples.Console
 {
@@ -74,7 +73,6 @@ namespace HF.Samples.Console
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
@@ -97,7 +95,10 @@ namespace HF.Samples.Console
         //这里需要配置权限规则
         public bool Authorize(DashboardContext context)
         {
-            return true;
+            var httpContext = context.GetHttpContext();
+
+            // Allow all authenticated users to see the Dashboard (potentially dangerous).
+            return httpContext.User.Identity.IsAuthenticated;
         }
     }
 }
